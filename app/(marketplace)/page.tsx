@@ -1,4 +1,23 @@
-export default function HomePage() {
+import Link from 'next/link';
+import { createClient } from '@/lib/supabase/server';
+
+export default async function HomePage() {
+  const supabase = await createClient();
+
+  // Fetch featured services
+  const { data: featuredServices } = await supabase
+    .from('services')
+    .select(`
+      *,
+      categories (
+        name,
+        icon
+      )
+    `)
+    .eq('status', 'published')
+    .eq('featured', true)
+    .limit(3);
+
   return (
     <div className="container mx-auto px-4 py-16">
       {/* Hero Section */}
@@ -11,47 +30,89 @@ export default function HomePage() {
           SaaS personalizados e consultorias especializadas.
         </p>
         <div className="flex gap-4 justify-center">
-          <button className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:opacity-90 transition">
+          <Link
+            href="/services"
+            className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:opacity-90 transition"
+          >
             Explorar Serviços
-          </button>
-          <button className="border border-border px-6 py-3 rounded-lg font-medium hover:bg-accent transition">
+          </Link>
+          <Link
+            href="/contact"
+            className="border border-border px-6 py-3 rounded-lg font-medium hover:bg-accent transition"
+          >
             Fale Conosco
-          </button>
+          </Link>
         </div>
       </section>
 
-      {/* Services Preview */}
+      {/* Featured Services */}
       <section className="py-16">
-        <h2 className="text-3xl font-bold text-center mb-12">
-          Nossos Serviços
-        </h2>
+        <div className="flex justify-between items-center mb-12">
+          <h2 className="text-3xl font-bold">Serviços em Destaque</h2>
+          <Link
+            href="/services"
+            className="text-primary hover:underline font-medium"
+          >
+            Ver todos →
+          </Link>
+        </div>
         <div className="grid md:grid-cols-3 gap-8">
-          {[
-            {
-              title: "Desenvolvimento SaaS",
-              description: "Criação de soluções SaaS completas com IA integrada",
-              icon: "💻",
-            },
-            {
-              title: "Consultoria em IA",
-              description: "Estratégia e implementação de soluções de Inteligência Artificial",
-              icon: "🧠",
-            },
-            {
-              title: "Soluções Personalizadas",
-              description: "Desenvolvemos a solução perfeita para seu caso específico",
-              icon: "⚙️",
-            },
-          ].map((service, index) => (
-            <div
-              key={index}
-              className="border border-border rounded-lg p-6 hover:shadow-lg transition"
-            >
-              <div className="text-4xl mb-4">{service.icon}</div>
-              <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-              <p className="text-muted-foreground">{service.description}</p>
-            </div>
-          ))}
+          {featuredServices && featuredServices.length > 0 ? (
+            featuredServices.map((service) => (
+              <Link
+                key={service.id}
+                href={`/services/${service.slug}`}
+                className="border border-border rounded-lg p-6 hover:shadow-lg transition group"
+              >
+                {service.categories && (
+                  <div className="flex items-center gap-2 text-muted-foreground mb-3">
+                    <span className="text-2xl">{service.categories.icon}</span>
+                    <span className="text-sm">{service.categories.name}</span>
+                  </div>
+                )}
+                <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition">
+                  {service.title}
+                </h3>
+                <p className="text-muted-foreground line-clamp-2 mb-4">
+                  {service.description}
+                </p>
+                <div className="text-primary font-medium text-sm">
+                  Ver detalhes →
+                </div>
+              </Link>
+            ))
+          ) : (
+            // Fallback static cards
+            [
+              {
+                title: "Desenvolvimento SaaS",
+                description:
+                  "Criação de soluções SaaS completas com IA integrada",
+                icon: "💻",
+              },
+              {
+                title: "Consultoria em IA",
+                description:
+                  "Estratégia e implementação de soluções de Inteligência Artificial",
+                icon: "🧠",
+              },
+              {
+                title: "Soluções Personalizadas",
+                description:
+                  "Desenvolvemos a solução perfeita para seu caso específico",
+                icon: "⚙️",
+              },
+            ].map((service, index) => (
+              <div
+                key={index}
+                className="border border-border rounded-lg p-6 hover:shadow-lg transition"
+              >
+                <div className="text-4xl mb-4">{service.icon}</div>
+                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+                <p className="text-muted-foreground">{service.description}</p>
+              </div>
+            ))
+          )}
         </div>
       </section>
 
@@ -63,9 +124,12 @@ export default function HomePage() {
         <p className="text-lg mb-6 opacity-90">
           Entre em contato e descubra como podemos ajudar seu negócio
         </p>
-        <button className="bg-white text-purple-600 px-8 py-3 rounded-lg font-medium hover:opacity-90 transition">
+        <Link
+          href="/services"
+          className="inline-block bg-white text-purple-600 px-8 py-3 rounded-lg font-medium hover:opacity-90 transition"
+        >
           Solicitar Orçamento
-        </button>
+        </Link>
       </section>
     </div>
   );
