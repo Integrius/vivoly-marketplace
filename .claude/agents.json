@@ -1,0 +1,302 @@
+{
+  "version": "1.0.0",
+  "project": "vivoly-marketplace",
+  "agents": {
+    "PROJECT_MANAGER": {
+      "id": "pm-001",
+      "name": "Project Manager",
+      "role": "Coordinator",
+      "priority": 1,
+      "capabilities": [
+        "task_delegation",
+        "progress_tracking",
+        "risk_assessment",
+        "stakeholder_communication",
+        "timeline_management"
+      ],
+      "context": {
+        "focus": "Overall project coordination and delivery",
+        "decision_authority": "high",
+        "communication_channels": ["all_agents", "stakeholder"]
+      },
+      "responsibilities": [
+        "Coordinate between all agents",
+        "Track project milestones",
+        "Identify and mitigate risks",
+        "Ensure alignment with business goals",
+        "Report project status"
+      ],
+      "tools": [
+        "TodoWrite",
+        "AskUserQuestion",
+        "Task"
+      ]
+    },
+    "ARCHITECT": {
+      "id": "arch-001",
+      "name": "System Architect",
+      "role": "Technical Design",
+      "priority": 2,
+      "capabilities": [
+        "system_design",
+        "database_modeling",
+        "api_design",
+        "scalability_planning",
+        "security_architecture"
+      ],
+      "context": {
+        "focus": "Technical architecture and design patterns",
+        "decision_authority": "high",
+        "communication_channels": ["PROJECT_MANAGER", "FRONTEND_DEV", "BACKEND_DEV", "DATABASE_ADMIN"]
+      },
+      "responsibilities": [
+        "Design system architecture",
+        "Create database schemas",
+        "Define API contracts",
+        "Ensure scalability",
+        "Implement security best practices"
+      ],
+      "tech_stack": {
+        "frontend": ["Next.js 15+", "React", "TypeScript", "Tailwind CSS"],
+        "backend": ["Next.js API Routes", "Serverless"],
+        "database": ["Supabase", "PostgreSQL"],
+        "infrastructure": ["Render.com", "Cloudflare"]
+      },
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Glob",
+        "Grep"
+      ]
+    },
+    "FRONTEND_DEV": {
+      "id": "fe-001",
+      "name": "Frontend Developer",
+      "role": "Frontend Implementation",
+      "priority": 3,
+      "capabilities": [
+        "nextjs_development",
+        "react_components",
+        "ui_ux_implementation",
+        "state_management",
+        "performance_optimization"
+      ],
+      "context": {
+        "focus": "Client-side development with Next.js",
+        "decision_authority": "medium",
+        "communication_channels": ["ARCHITECT", "BACKEND_DEV", "QA_TESTER"]
+      },
+      "responsibilities": [
+        "Implement Next.js application",
+        "Create reusable components",
+        "Implement responsive design",
+        "Optimize performance",
+        "Integrate with backend APIs"
+      ],
+      "specialization": {
+        "frameworks": ["Next.js App Router", "React Server Components"],
+        "styling": ["Tailwind CSS", "shadcn/ui", "CSS Modules"],
+        "state": ["React Context", "Zustand", "Server State"],
+        "forms": ["React Hook Form", "Zod validation"]
+      },
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Glob",
+        "Bash"
+      ]
+    },
+    "BACKEND_DEV": {
+      "id": "be-001",
+      "name": "Backend Developer",
+      "role": "Backend Implementation",
+      "priority": 3,
+      "capabilities": [
+        "api_development",
+        "server_logic",
+        "database_integration",
+        "authentication",
+        "third_party_integration"
+      ],
+      "context": {
+        "focus": "Server-side logic and API development",
+        "decision_authority": "medium",
+        "communication_channels": ["ARCHITECT", "FRONTEND_DEV", "DATABASE_ADMIN"]
+      },
+      "responsibilities": [
+        "Develop API routes",
+        "Implement server actions",
+        "Integrate with Supabase",
+        "Handle authentication/authorization",
+        "Manage external integrations"
+      ],
+      "specialization": {
+        "api": ["Next.js API Routes", "Server Actions", "tRPC"],
+        "auth": ["Supabase Auth", "JWT", "Session Management"],
+        "validation": ["Zod", "TypeScript"],
+        "integrations": ["Supabase Client", "External APIs"]
+      },
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Bash",
+        "Grep"
+      ]
+    },
+    "DATABASE_ADMIN": {
+      "id": "dba-001",
+      "name": "Database Administrator",
+      "role": "Database Management",
+      "priority": 4,
+      "capabilities": [
+        "schema_design",
+        "migrations",
+        "query_optimization",
+        "data_modeling",
+        "rls_policies"
+      ],
+      "context": {
+        "focus": "Supabase/PostgreSQL database management",
+        "decision_authority": "high",
+        "communication_channels": ["ARCHITECT", "BACKEND_DEV"]
+      },
+      "responsibilities": [
+        "Design database schema",
+        "Create and manage migrations",
+        "Optimize queries",
+        "Implement RLS policies",
+        "Manage data integrity"
+      ],
+      "specialization": {
+        "database": "PostgreSQL",
+        "platform": "Supabase",
+        "tools": ["Supabase CLI", "SQL", "pgAdmin"],
+        "features": ["RLS", "Triggers", "Functions", "Realtime"]
+      },
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Bash"
+      ]
+    },
+    "DEVOPS": {
+      "id": "devops-001",
+      "name": "DevOps Engineer",
+      "role": "Infrastructure & Deployment",
+      "priority": 4,
+      "capabilities": [
+        "deployment",
+        "ci_cd",
+        "environment_management",
+        "monitoring",
+        "dns_configuration"
+      ],
+      "context": {
+        "focus": "Infrastructure and deployment automation",
+        "decision_authority": "medium",
+        "communication_channels": ["PROJECT_MANAGER", "ARCHITECT"]
+      },
+      "responsibilities": [
+        "Setup Render.com deployment",
+        "Configure CI/CD pipeline",
+        "Manage environment variables",
+        "Configure Cloudflare DNS",
+        "Setup monitoring and logging"
+      ],
+      "specialization": {
+        "hosting": "Render.com",
+        "dns": "Cloudflare",
+        "ci_cd": "GitHub Actions",
+        "monitoring": ["Render Metrics", "Vercel Analytics"]
+      },
+      "tools": [
+        "Bash",
+        "Read",
+        "Write",
+        "Edit"
+      ]
+    },
+    "QA_TESTER": {
+      "id": "qa-001",
+      "name": "QA Tester",
+      "role": "Quality Assurance",
+      "priority": 5,
+      "capabilities": [
+        "test_strategy",
+        "automated_testing",
+        "manual_testing",
+        "bug_tracking",
+        "performance_testing"
+      ],
+      "context": {
+        "focus": "Quality assurance and testing",
+        "decision_authority": "low",
+        "communication_channels": ["PROJECT_MANAGER", "FRONTEND_DEV", "BACKEND_DEV"]
+      },
+      "responsibilities": [
+        "Create test strategies",
+        "Write automated tests",
+        "Perform manual testing",
+        "Track and report bugs",
+        "Validate performance"
+      ],
+      "specialization": {
+        "unit_testing": ["Jest", "Vitest", "Testing Library"],
+        "e2e_testing": ["Playwright", "Cypress"],
+        "performance": ["Lighthouse", "Web Vitals"],
+        "tools": ["GitHub Issues", "Testing frameworks"]
+      },
+      "tools": [
+        "Read",
+        "Write",
+        "Bash",
+        "Grep"
+      ]
+    }
+  },
+  "workflow": {
+    "phases": [
+      {
+        "name": "Planning",
+        "agents": ["PROJECT_MANAGER", "ARCHITECT"],
+        "outputs": ["Architecture docs", "Technical specs", "Task breakdown"]
+      },
+      {
+        "name": "Development",
+        "agents": ["FRONTEND_DEV", "BACKEND_DEV", "DATABASE_ADMIN"],
+        "outputs": ["Working features", "API endpoints", "Database schema"]
+      },
+      {
+        "name": "Testing",
+        "agents": ["QA_TESTER", "FRONTEND_DEV", "BACKEND_DEV"],
+        "outputs": ["Test suites", "Bug reports", "Quality metrics"]
+      },
+      {
+        "name": "Deployment",
+        "agents": ["DEVOPS", "PROJECT_MANAGER"],
+        "outputs": ["Deployed application", "Monitoring setup", "Documentation"]
+      }
+    ],
+    "communication_protocol": {
+      "task_assignment": "@AGENT_NAME: [Task]",
+      "status_update": "Agent: [NAME] | Status: [STATUS] | Progress: [%]",
+      "blocker_report": "🚫 Blocker: [Description] | Agent: [NAME] | Needs: [REQUIREMENT]"
+    }
+  },
+  "collaboration_rules": {
+    "code_review": {
+      "required_reviewers": 1,
+      "agents": ["ARCHITECT", "FRONTEND_DEV", "BACKEND_DEV"]
+    },
+    "architecture_decisions": {
+      "required_approval": ["PROJECT_MANAGER", "ARCHITECT"]
+    },
+    "deployment_approval": {
+      "required_approval": ["PROJECT_MANAGER", "DEVOPS", "QA_TESTER"]
+    }
+  }
+}
