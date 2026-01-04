@@ -1,0 +1,4 @@
+ Links Importantes
+Repositório: https://github.com/Integrius/vivoly-marketplace
+Supabase Dashboard: https://supabase.com/dashboard/project/fznsuiyrfwygxqgjirqd
+Local: http://localhost:3000

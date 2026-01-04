@@ -2,8 +2,8 @@
 
 **Project Control & Management File**
 **Domain:** vivoly.com.br
-**Status:** 🚀 Initial Setup
-**Last Updated:** 2026-01-03
+**Status:** 🎨 UI Development Phase
+**Last Updated:** 2026-01-04
 
 ---
 
@@ -337,15 +337,70 @@ NEXT_PUBLIC_GA_ID=
 ## 📊 Project Metrics
 
 **Current Status:**
-- Progress: 10%
-- Phase: Foundation
-- Active Agents: 7
-- Open Tasks: 15
+- Progress: 35%
+- Phase: UI Development
+- Active Agents: FRONTEND_DEV, ARCHITECT
+- Completed Tasks: 12
+- Open Tasks: 8
 - Blockers: 0
+
+**Milestones Completed:**
+- ✅ Project structure and configuration
+- ✅ Basic component architecture
+- ✅ Design system foundation
+- ✅ Logo integration
+- ✅ Color palette system
+- ✅ Card styling standardization
+- ✅ Header and Footer components
+
+**Next Milestones:**
+- 🔄 Database integration testing
+- 🔄 Service management dashboard
+- 📝 Authentication flow
+- 📝 Contact/About pages
 
 ---
 
 ## 🔄 Change Log
+
+### 2026-01-04
+**UI/UX Improvements:**
+- ✅ Added company logo to Header and Footer components
+- ✅ Created Header component with navigation and CTA button
+- ✅ Created Footer component with links and contact info
+- ✅ Implemented custom card styles with 10px border-radius
+- ✅ Created custom shadow utilities for cards (card-shadow, card-shadow-hover, card-shadow-lg)
+- ✅ Updated all cards across the application with new styles
+- ✅ Fixed VS Code CSS validation warnings for Tailwind directives
+- ✅ Changed primary color to Teal Dark (189 94% 22%)
+
+**Design System:**
+- Created 8 color palette options (documented in COLOR_PALETTES.md)
+- Added `rounded-card` utility (10px border-radius) to Tailwind config
+- Created custom shadow classes for consistent elevation
+- Documented color change process in COMO_MUDAR_CORES.md
+- Documented card style updates in CARD_STYLES_UPDATE.md
+
+**Components Created:**
+- `components/marketplace/Header.tsx` - Site header with logo and navigation
+- `components/marketplace/Footer.tsx` - Site footer with links and branding
+
+**Configuration Updates:**
+- `.vscode/settings.json` - Disabled CSS validation for Tailwind compatibility
+- `tailwind.config.ts` - Added custom border-radius for cards
+- `app/globals.css` - Added custom shadow utilities and fixed color variables structure
+
+**Files Updated:**
+- `app/(marketplace)/layout.tsx` - Added Header and Footer
+- `app/(marketplace)/page.tsx` - Updated cards with new styles
+- `app/(marketplace)/services/page.tsx` - Updated service cards
+- `app/(marketplace)/services/[slug]/page.tsx` - Updated detail cards
+- `components/marketplace/ServiceRequestForm.tsx` - Updated form inputs
+
+**Documentation Created:**
+- `COLOR_PALETTES.md` - 8 color scheme options with implementation guide
+- `COMO_MUDAR_CORES.md` - Quick guide for changing site colors
+- `CARD_STYLES_UPDATE.md` - Documentation of card styling changes
 
 ### 2026-01-03
 - Initial project structure defined
@@ -353,6 +408,88 @@ NEXT_PUBLIC_GA_ID=
 - Agent system architecture designed
 - Technology stack confirmed
 - Database schema drafted
+
+---
+
+## 🎨 Design System
+
+### Color Palette (Current)
+**Primary Color:** Teal Dark
+- HSL: `189 94% 22%`
+- Hex: `#065666` (approximately)
+- Usage: Buttons, links, highlights, CTAs
+
+**Available Palettes:**
+8 pre-configured color schemes available in `COLOR_PALETTES.md`:
+1. Purple Tech (Roxo vibrante)
+2. Ocean Blue (Azul profissional)
+3. Emerald Fresh (Verde moderno)
+4. Sunset Orange (Laranja energético)
+5. **Midnight Teal (Current - Teal sofisticado)**
+6. Royal Indigo (Índigo premium)
+7. Rose Elegant (Rosa moderno)
+8. Dark Gold (Dourado luxo)
+
+### Typography
+- **Font Family:** Inter (Google Fonts)
+- **Language:** Portuguese (pt-BR)
+
+### Spacing & Layout
+- **Container:** `container mx-auto px-4`
+- **Card Padding:** `p-6` (24px)
+- **Section Spacing:** `py-12` or `py-16`
+
+### Border Radius
+- **Cards:** `rounded-card` (10px)
+- **Buttons:** `rounded-card` (10px)
+- **Inputs:** `rounded-card` (10px)
+- **Pills/Badges:** `rounded-full`
+
+### Shadows (Elevation)
+```css
+/* Light shadow for cards */
+.card-shadow {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+/* Medium shadow for hover states */
+.card-shadow-hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Strong shadow for CTAs and important elements */
+.card-shadow-lg {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+```
+
+### Component Patterns
+
+**Service Card:**
+```tsx
+className="border border-border rounded-card p-6 card-shadow hover:card-shadow-hover hover:-translate-y-1 transition-all duration-200 group relative"
+```
+
+**CTA Section:**
+```tsx
+className="bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-card card-shadow-lg p-12 text-center"
+```
+
+**Form Input:**
+```tsx
+className="w-full px-3 py-2 border border-border rounded-card focus:outline-none focus:ring-2 focus:ring-primary"
+```
+
+**Metadata Card:**
+```tsx
+className="border-2 border-border rounded-card card-shadow p-6 hover:border-primary transition-colors"
+```
+
+### Branding
+- **Logo Location:** `/public/logo.png`
+- **Logo Size (Header):** 150x40px (height: 40px, width: auto)
+- **Company Name:** Vivoly
+- **Tagline:** "AI Services Marketplace"
 
 ---
 
@@ -401,6 +538,45 @@ npx supabase gen types typescript  # Generate types
 
 # Deployment
 git push origin main  # Auto-deploy to Render.com
+```
+
+---
+
+## 🔧 Quick Reference Guide
+
+### Changing Site Colors
+1. Open `app/globals.css`
+2. Find line with `--primary:` (around line 13)
+3. Replace with value from `COLOR_PALETTES.md`
+4. See `COMO_MUDAR_CORES.md` for detailed guide
+
+### Adding New Components
+1. Create file in `components/marketplace/` or `components/shared/`
+2. Use TypeScript and 'use client' directive if needed
+3. Follow established patterns from existing components
+4. Use design system classes (rounded-card, card-shadow, etc.)
+
+### Key Files to Know
+- **Colors:** `app/globals.css` (lines 6-32 for :root variables)
+- **Tailwind Config:** `tailwind.config.ts` (custom utilities)
+- **Main Layout:** `app/(marketplace)/layout.tsx`
+- **Homepage:** `app/(marketplace)/page.tsx`
+- **Header:** `components/marketplace/Header.tsx`
+- **Footer:** `components/marketplace/Footer.tsx`
+
+### Component Class Patterns
+```tsx
+// Service Card
+"border border-border rounded-card p-6 card-shadow hover:card-shadow-hover hover:-translate-y-1 transition-all duration-200"
+
+// Button Primary
+"bg-primary text-primary-foreground px-4 py-2 rounded-card hover:opacity-90 transition"
+
+// Input
+"w-full px-3 py-2 border border-border rounded-card focus:outline-none focus:ring-2 focus:ring-primary"
+
+// CTA Section
+"bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-card card-shadow-lg p-12 text-center"
 ```
 
 ---

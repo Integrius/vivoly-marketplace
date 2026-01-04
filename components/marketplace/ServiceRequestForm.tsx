@@ -67,7 +67,7 @@ export default function ServiceRequestForm({
 
   if (status === 'success') {
     return (
-      <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
+      <div className="bg-green-50 border border-green-200 rounded-card p-6 text-center">
         <div className="text-4xl mb-3">✅</div>
         <h4 className="font-semibold text-green-900 mb-2">
           Solicitação Enviada!
@@ -97,7 +97,7 @@ export default function ServiceRequestForm({
           required
           value={formData.client_name}
           onChange={handleChange}
-          className="w-full px-3 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+          className="w-full px-3 py-2 border border-border rounded-card focus:outline-none focus:ring-2 focus:ring-primary"
           placeholder="Seu nome"
         />
       </div>
@@ -117,7 +117,7 @@ export default function ServiceRequestForm({
           required
           value={formData.client_email}
           onChange={handleChange}
-          className="w-full px-3 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+          className="w-full px-3 py-2 border border-border rounded-card focus:outline-none focus:ring-2 focus:ring-primary"
           placeholder="seu@email.com"
         />
       </div>
@@ -136,7 +136,7 @@ export default function ServiceRequestForm({
           name="company_name"
           value={formData.company_name}
           onChange={handleChange}
-          className="w-full px-3 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+          className="w-full px-3 py-2 border border-border rounded-card focus:outline-none focus:ring-2 focus:ring-primary"
           placeholder="Nome da empresa"
         />
       </div>
@@ -153,14 +153,14 @@ export default function ServiceRequestForm({
           rows={4}
           value={formData.message}
           onChange={handleChange}
-          className="w-full px-3 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+          className="w-full px-3 py-2 border border-border rounded-card focus:outline-none focus:ring-2 focus:ring-primary resize-none"
           placeholder="Conte-nos sobre seu projeto e necessidades..."
         />
       </div>
 
       {/* Error Message */}
       {status === 'error' && (
-        <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm">
+        <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-card text-sm">
           {errorMessage || 'Erro ao enviar solicitação. Tente novamente.'}
         </div>
       )}
@@ -169,7 +169,7 @@ export default function ServiceRequestForm({
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="w-full bg-primary text-primary-foreground py-3 rounded-lg font-medium hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full bg-primary text-primary-foreground py-3 rounded-card font-medium hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {status === 'loading' ? 'Enviando...' : 'Solicitar Orçamento'}
       </button>

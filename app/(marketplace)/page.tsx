@@ -22,23 +22,23 @@ export default async function HomePage() {
     <div className="container mx-auto px-4 py-16">
       {/* Hero Section */}
       <section className="text-center py-20">
-        <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+        <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent leading-tight">
           Vivoly AI Services
         </h1>
-        <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+        <p className="text-2xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
           Transforme seu negócio com soluções baseadas em Inteligência Artificial.
           SaaS personalizados e consultorias especializadas.
         </p>
         <div className="flex gap-4 justify-center">
           <Link
             href="/services"
-            className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:opacity-90 transition"
+            className="bg-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition-all text-lg"
           >
             Explorar Serviços
           </Link>
           <Link
             href="/contact"
-            className="border border-border px-6 py-3 rounded-lg font-medium hover:bg-accent transition"
+            className="border-2 border-border px-8 py-4 rounded-lg font-semibold hover:bg-accent transition-all text-lg"
           >
             Fale Conosco
           </Link>
@@ -48,10 +48,10 @@ export default async function HomePage() {
       {/* Featured Services */}
       <section className="py-16">
         <div className="flex justify-between items-center mb-12">
-          <h2 className="text-3xl font-bold">Serviços em Destaque</h2>
+          <h2 className="text-4xl font-bold">Serviços em Destaque</h2>
           <Link
             href="/services"
-            className="text-primary hover:underline font-medium"
+            className="text-primary hover:underline font-semibold text-lg"
           >
             Ver todos →
           </Link>
@@ -62,21 +62,41 @@ export default async function HomePage() {
               <Link
                 key={service.id}
                 href={`/services/${service.slug}`}
-                className="border border-border rounded-lg p-6 hover:shadow-lg transition group"
+                className="border border-border rounded-card p-6 card-shadow hover:card-shadow-hover hover:-translate-y-1 transition-all duration-200 group relative"
               >
+                {/* Featured Badge */}
+                {service.featured && (
+                  <div className="absolute top-4 right-4 bg-primary text-primary-foreground text-xs px-2 py-1 rounded-full font-medium">
+                    ⭐ Destaque
+                  </div>
+                )}
+
                 {service.categories && (
                   <div className="flex items-center gap-2 text-muted-foreground mb-3">
                     <span className="text-2xl">{service.categories.icon}</span>
-                    <span className="text-sm">{service.categories.name}</span>
+                    <span className="text-sm font-medium">{service.categories.name}</span>
                   </div>
                 )}
-                <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition">
+                <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground line-clamp-2 mb-4">
+                <p className="text-muted-foreground line-clamp-2 mb-4 leading-relaxed">
                   {service.description}
                 </p>
-                <div className="text-primary font-medium text-sm">
+
+                {/* Trust Signals */}
+                <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
+                  <div className="flex items-center gap-1">
+                    <span>⭐</span>
+                    <span className="font-medium">5.0</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <span>✓</span>
+                    <span>Verificado</span>
+                  </div>
+                </div>
+
+                <div className="text-primary font-semibold text-sm">
                   Ver detalhes →
                 </div>
               </Link>
@@ -105,11 +125,23 @@ export default async function HomePage() {
             ].map((service, index) => (
               <div
                 key={index}
-                className="border border-border rounded-lg p-6 hover:shadow-lg transition"
+                className="border border-border rounded-card p-6 card-shadow hover:card-shadow-hover hover:-translate-y-1 transition-all duration-200 relative"
               >
                 <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                <p className="text-muted-foreground">{service.description}</p>
+                <h3 className="text-xl font-bold mb-2">{service.title}</h3>
+                <p className="text-muted-foreground leading-relaxed mb-4">{service.description}</p>
+
+                {/* Trust Signals */}
+                <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-1">
+                    <span>⭐</span>
+                    <span className="font-medium">5.0</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <span>✓</span>
+                    <span>Verificado</span>
+                  </div>
+                </div>
               </div>
             ))
           )}
@@ -117,16 +149,16 @@ export default async function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg p-12 text-center">
-        <h2 className="text-3xl font-bold mb-4">
+      <section className="bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-card card-shadow-lg p-12 text-center">
+        <h2 className="text-4xl font-bold mb-4">
           Pronto para começar?
         </h2>
-        <p className="text-lg mb-6 opacity-90">
+        <p className="text-xl mb-8 opacity-90 leading-relaxed">
           Entre em contato e descubra como podemos ajudar seu negócio
         </p>
         <Link
           href="/services"
-          className="inline-block bg-white text-purple-600 px-8 py-3 rounded-lg font-medium hover:opacity-90 transition"
+          className="inline-block bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition-all text-lg"
         >
           Solicitar Orçamento
         </Link>

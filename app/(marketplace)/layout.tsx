@@ -1,3 +1,6 @@
+import Header from '@/components/marketplace/Header';
+import Footer from '@/components/marketplace/Footer';
+
 export default function MarketplaceLayout({
   children,
 }: {
@@ -5,9 +8,9 @@ export default function MarketplaceLayout({
 }) {
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Header will be added here */}
+      <Header />
       <main className="flex-1">{children}</main>
-      {/* Footer will be added here */}
+      <Footer />
     </div>
   );
 }

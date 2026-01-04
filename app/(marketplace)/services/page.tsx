@@ -68,8 +68,8 @@ export default async function ServicesPage({
     <div className="container mx-auto px-4 py-12">
       {/* Header */}
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold mb-4">Nossos Serviços</h1>
-        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+        <h1 className="text-5xl font-bold mb-6 leading-tight">Nossos Serviços</h1>
+        <p className="text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
           Soluções de IA personalizadas para transformar seu negócio
         </p>
       </div>
@@ -111,11 +111,11 @@ export default async function ServicesPage({
             <Link
               key={service.id}
               href={`/services/${service.slug}`}
-              className="border border-border rounded-lg p-6 hover:shadow-lg transition group"
+              className="border border-border rounded-card p-6 card-shadow hover:card-shadow-hover hover:-translate-y-1 transition-all duration-200 group relative"
             >
               {/* Featured Badge */}
               {service.featured && (
-                <div className="inline-block bg-primary text-primary-foreground text-xs px-2 py-1 rounded-full mb-3">
+                <div className="absolute top-4 right-4 bg-primary text-primary-foreground text-xs px-2 py-1 rounded-full font-medium">
                   ⭐ Destaque
                 </div>
               )}
@@ -123,41 +123,53 @@ export default async function ServicesPage({
               {/* Category */}
               {service.categories && (
                 <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
-                  <span>{service.categories.icon}</span>
-                  <span>{service.categories.name}</span>
+                  <span className="text-xl">{service.categories.icon}</span>
+                  <span className="font-medium">{service.categories.name}</span>
                 </div>
               )}
 
               {/* Title */}
-              <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition">
+              <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
                 {service.title}
               </h3>
 
               {/* Description */}
-              <p className="text-muted-foreground mb-4 line-clamp-3">
+              <p className="text-muted-foreground mb-4 line-clamp-3 leading-relaxed">
                 {service.description}
               </p>
 
               {/* Metadata */}
               {service.metadata && (
-                <div className="space-y-2 text-sm">
+                <div className="space-y-2 text-sm mb-4">
                   {service.metadata.price_range && (
                     <div className="flex items-center gap-2">
-                      <span className="text-muted-foreground">💰</span>
-                      <span>{service.metadata.price_range}</span>
+                      <span className="text-base">💰</span>
+                      <span className="font-semibold">{service.metadata.price_range}</span>
                     </div>
                   )}
                   {service.metadata.delivery_time && (
                     <div className="flex items-center gap-2">
-                      <span className="text-muted-foreground">⏱️</span>
-                      <span>{service.metadata.delivery_time}</span>
+                      <span className="text-base">⏱️</span>
+                      <span className="font-medium">{service.metadata.delivery_time}</span>
                     </div>
                   )}
                 </div>
               )}
 
+              {/* Trust Signals */}
+              <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
+                <div className="flex items-center gap-1">
+                  <span>⭐</span>
+                  <span className="font-medium">5.0</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <span>✓</span>
+                  <span>Verificado</span>
+                </div>
+              </div>
+
               {/* CTA */}
-              <div className="mt-4 text-primary font-medium">
+              <div className="mt-4 text-primary font-semibold">
                 Ver detalhes →
               </div>
             </Link>
@@ -178,7 +190,7 @@ export default async function ServicesPage({
       )}
 
       {/* CTA Section */}
-      <div className="mt-16 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg p-8 text-center">
+      <div className="mt-16 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-card card-shadow-lg p-8 text-center">
         <h2 className="text-2xl font-bold mb-3">
           Não encontrou o que procura?
         </h2>
