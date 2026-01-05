@@ -22,7 +22,7 @@ export default async function HomePage() {
     <div className="container mx-auto px-4 py-16">
       {/* Hero Section */}
       <section className="text-center py-20">
-        <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent leading-tight">
+        <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent leading-tight">
           Vivoly AI Services
         </h1>
         <p className="text-2xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
@@ -149,7 +149,7 @@ export default async function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-card card-shadow-lg p-12 text-center">
+      <section className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-card card-shadow-lg p-12 text-center">
         <h2 className="text-4xl font-bold mb-4">
           Pronto para começar?
         </h2>
@@ -158,7 +158,7 @@ export default async function HomePage() {
         </p>
         <Link
           href="/services"
-          className="inline-block bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition-all text-lg"
+          className="inline-block bg-white text-emerald-600 px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition-all text-lg"
         >
           Solicitar Orçamento
         </Link>

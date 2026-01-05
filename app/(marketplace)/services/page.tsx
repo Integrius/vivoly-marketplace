@@ -190,7 +190,7 @@ export default async function ServicesPage({
       )}
 
       {/* CTA Section */}
-      <div className="mt-16 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-card card-shadow-lg p-8 text-center">
+      <div className="mt-16 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-card card-shadow-lg p-8 text-center">
         <h2 className="text-2xl font-bold mb-3">
           Não encontrou o que procura?
         </h2>
@@ -199,7 +199,7 @@ export default async function ServicesPage({
         </p>
         <Link
           href="/contact"
-          className="inline-block bg-white text-purple-600 px-6 py-3 rounded-lg font-medium hover:opacity-90 transition"
+          className="inline-block bg-white text-emerald-600 px-6 py-3 rounded-lg font-medium hover:opacity-90 transition"
         >
           Fale Conosco
         </Link>
