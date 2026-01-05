@@ -372,7 +372,7 @@ NEXT_PUBLIC_GA_ID=
 - ✅ Created custom shadow utilities for cards (card-shadow, card-shadow-hover, card-shadow-lg)
 - ✅ Updated all cards across the application with new styles
 - ✅ Fixed VS Code CSS validation warnings for Tailwind directives
-- ✅ Changed primary color to Teal Dark (189 94% 22%)
+- ✅ Changed primary color to Royal Indigo (239 84% 67%)
 
 **Design System:**
 - Created 8 color palette options (documented in COLOR_PALETTES.md)
@@ -414,9 +414,9 @@ NEXT_PUBLIC_GA_ID=
 ## 🎨 Design System
 
 ### Color Palette (Current)
-**Primary Color:** Teal Dark
-- HSL: `189 94% 22%`
-- Hex: `#065666` (approximately)
+**Primary Color:** Royal Indigo
+- HSL: `239 84% 67%`
+- Hex: `#6366F1` (approximately)
 - Usage: Buttons, links, highlights, CTAs
 
 **Available Palettes:**
@@ -425,7 +425,8 @@ NEXT_PUBLIC_GA_ID=
 2. Ocean Blue (Azul profissional)
 3. Emerald Fresh (Verde moderno)
 4. Sunset Orange (Laranja energético)
-5. **Midnight Teal (Current - Teal sofisticado)**
+5. **Midnight Teal (Current - Teal sofisticado)
+6. **Royal Indigo (Current - Índigo premium)**
 6. Royal Indigo (Índigo premium)
 7. Rose Elegant (Rosa moderno)
 8. Dark Gold (Dourado luxo)
