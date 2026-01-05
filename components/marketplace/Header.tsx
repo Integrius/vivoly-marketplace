@@ -35,6 +35,12 @@ export default function Header() {
               Serviços
             </Link>
             <Link
+              href="/blog"
+              className="text-sm font-medium text-foreground hover:text-primary transition"
+            >
+              Blog
+            </Link>
+            <Link
               href="/about"
               className="text-sm font-medium text-foreground hover:text-primary transition"
             >

@@ -23,25 +23,46 @@ export default async function HomePage() {
       {/* Hero Section */}
       <section className="text-center py-20">
         <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent leading-tight">
-          Vivoly AI Services
+          Soluções de Inteligência Artificial que Transformam Negócios
         </h1>
-        <p className="text-2xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
-          Transforme seu negócio com soluções baseadas em Inteligência Artificial.
-          SaaS personalizados e consultorias especializadas.
+        <p className="text-2xl text-muted-foreground max-w-3xl mx-auto mb-6 leading-relaxed">
+          Desenvolvemos <strong>SaaS personalizados com IA</strong> que impulsionam resultados reais.
+          Desde 2025, especializados em criar sistemas inteligentes com excelência em tecnologia,
+          confiabilidade e performance.
         </p>
-        <div className="flex gap-4 justify-center">
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
+          <strong>Destaque:</strong> Integrius - CRM Imobiliário com IA que revoluciona a gestão de propriedades
+          com automação inteligente e decisões baseadas em dados.
+        </p>
+        <div className="flex gap-4 justify-center flex-wrap">
           <Link
             href="/services"
-            className="bg-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition-all text-lg"
+            className="bg-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition-all text-lg shadow-lg"
           >
-            Explorar Serviços
+            Conheça Nossas Soluções
           </Link>
           <Link
             href="/contact"
-            className="border-2 border-border px-8 py-4 rounded-lg font-semibold hover:bg-accent transition-all text-lg"
+            className="border-2 border-primary px-8 py-4 rounded-lg font-semibold hover:bg-accent transition-all text-lg"
           >
-            Fale Conosco
+            Solicite uma Análise Gratuita
           </Link>
+        </div>
+
+        {/* Trust Indicators */}
+        <div className="mt-12 flex justify-center gap-8 flex-wrap text-sm text-muted-foreground">
+          <div className="flex items-center gap-2">
+            <span className="text-2xl">🏆</span>
+            <span>Especialistas em IA desde 2025</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-2xl">⚡</span>
+            <span>Alta Performance Garantida</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-2xl">🔒</span>
+            <span>Confiabilidade Comprovada</span>
+          </div>
         </div>
       </section>
 
@@ -62,7 +83,7 @@ export default async function HomePage() {
               <Link
                 key={service.id}
                 href={`/services/${service.slug}`}
-                className="border border-border rounded-card p-6 card-shadow hover:card-shadow-hover hover:-translate-y-1 transition-all duration-200 group relative"
+                className="border-[3px] border-primary rounded-card p-6 card-shadow hover:card-shadow-hover hover:-translate-y-1 transition-all duration-200 group card-folded overflow-hidden"
               >
                 {/* Featured Badge */}
                 {service.featured && (
@@ -111,9 +132,9 @@ export default async function HomePage() {
                 icon: "💻",
               },
               {
-                title: "Consultoria em IA",
+                title: "Automação Inteligente",
                 description:
-                  "Estratégia e implementação de soluções de Inteligência Artificial",
+                  "Automatize processos com Inteligência Artificial e aumente a eficiência",
                 icon: "🧠",
               },
               {
@@ -125,7 +146,7 @@ export default async function HomePage() {
             ].map((service, index) => (
               <div
                 key={index}
-                className="border border-border rounded-card p-6 card-shadow hover:card-shadow-hover hover:-translate-y-1 transition-all duration-200 relative"
+                className="border-[3px] border-primary rounded-card p-6 card-shadow hover:card-shadow-hover hover:-translate-y-1 transition-all duration-200 card-folded overflow-hidden"
               >
                 <div className="text-4xl mb-4">{service.icon}</div>
                 <h3 className="text-xl font-bold mb-2">{service.title}</h3>
@@ -148,20 +169,104 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* About Vivoly Section */}
+      <section className="py-16 bg-secondary/30 -mx-4 px-4 rounded-card">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold mb-6 text-center">
+            Por Que Escolher a Vivoly?
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            <div className="bg-white p-6 rounded-card card-shadow">
+              <h3 className="text-xl font-bold mb-3 text-primary">
+                🎯 Expertise Especializada
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Desde o início de 2025, nossa equipe dedica estudos aprofundados em Inteligência Artificial,
+                desenvolvendo soluções que combinam inovação tecnológica com aplicações práticas de negócio.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-card card-shadow">
+              <h3 className="text-xl font-bold mb-3 text-primary">
+                ✅ Resultados Comprovados
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                O Integrius, nosso CRM imobiliário com IA, demonstra nossa capacidade de entregar sistemas
+                com excelentes níveis de confiabilidade, performance e retorno sobre investimento.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-card card-shadow">
+              <h3 className="text-xl font-bold mb-3 text-primary">
+                🚀 Inovação Constante
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Múltiplos projetos em desenvolvimento e estudo garantem que estamos sempre na vanguarda
+                da tecnologia, trazendo as melhores soluções de IA para nossos clientes.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-card card-shadow">
+              <h3 className="text-xl font-bold mb-3 text-primary">
+                🤝 Compromisso com a Qualidade
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Seguimos rigorosas diretrizes de tecnologia, confiabilidade e seriedade em cada projeto,
+                garantindo soluções robustas e escaláveis para seu negócio.
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-r from-emerald-50 to-teal-50 p-8 rounded-card border-2 border-primary/20">
+            <h3 className="text-2xl font-bold mb-4 text-center">
+              Nosso Case de Sucesso: Integrius CRM
+            </h3>
+            <p className="text-center text-muted-foreground mb-6 leading-relaxed max-w-2xl mx-auto">
+              Sistema SaaS completo para gestão imobiliária, 100% desenvolvido com Inteligência Artificial.
+              Automatização de processos, análise preditiva de mercado e gestão inteligente de leads que
+              aumenta conversões em até 40%.
+            </p>
+            <div className="flex justify-center gap-6 flex-wrap text-sm">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-primary">40%</div>
+                <div className="text-muted-foreground">↑ Conversão</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-primary">99.9%</div>
+                <div className="text-muted-foreground">Uptime</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-primary">2x</div>
+                <div className="text-muted-foreground">Mais Rápido</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-card card-shadow-lg p-12 text-center">
+      <section className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-card card-shadow-lg p-12 text-center mt-16">
         <h2 className="text-4xl font-bold mb-4">
-          Pronto para começar?
+          Pronto para Transformar seu Negócio com IA?
         </h2>
-        <p className="text-xl mb-8 opacity-90 leading-relaxed">
-          Entre em contato e descubra como podemos ajudar seu negócio
+        <p className="text-xl mb-8 opacity-90 leading-relaxed max-w-2xl mx-auto">
+          Agende uma análise gratuita e descubra como nossas soluções de Inteligência Artificial
+          podem otimizar seus processos, reduzir custos e aumentar receitas.
         </p>
-        <Link
-          href="/services"
-          className="inline-block bg-white text-emerald-600 px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition-all text-lg"
-        >
-          Solicitar Orçamento
-        </Link>
+        <div className="flex gap-4 justify-center flex-wrap">
+          <Link
+            href="/services"
+            className="inline-block bg-white text-emerald-600 px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition-all text-lg shadow-lg"
+          >
+            Ver Todas as Soluções
+          </Link>
+          <Link
+            href="/contact"
+            className="inline-block border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-all text-lg"
+          >
+            Falar com Especialista
+          </Link>
+        </div>
       </section>
     </div>
   );

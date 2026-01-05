@@ -143,7 +143,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   1
                 </div>
                 <div>
-                  <h3 className="font-bold mb-2 text-lg">Consulta Inicial</h3>
+                  <h3 className="font-bold mb-2 text-lg">Reunião Inicial</h3>
                   <p className="text-muted-foreground leading-relaxed">
                     Entendemos suas necessidades e objetivos de negócio
                   </p>
@@ -206,7 +206,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             <div className="mt-6 space-y-4 text-base">
               <div className="flex items-center gap-3">
                 <span className="text-primary text-lg font-bold">✓</span>
-                <span className="font-medium">Consultoria gratuita</span>
+                <span className="font-medium">Análise gratuita</span>
               </div>
               <div className="flex items-center gap-3">
                 <span className="text-primary text-lg font-bold">✓</span>
