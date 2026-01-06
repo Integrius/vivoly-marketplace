@@ -101,7 +101,13 @@ export default function Footer() {
               href="/privacy"
               className="text-sm text-muted-foreground hover:text-primary transition"
             >
-              Privacidade
+              Política de Privacidade
+            </Link>
+            <Link
+              href="/cookies"
+              className="text-sm text-muted-foreground hover:text-primary transition"
+            >
+              Cookies
             </Link>
             <Link
               href="/terms"

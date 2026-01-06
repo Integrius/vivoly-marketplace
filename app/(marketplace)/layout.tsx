@@ -1,5 +1,6 @@
 import Header from '@/components/marketplace/Header';
 import Footer from '@/components/marketplace/Footer';
+import CookieConsent from '@/components/CookieConsent';
 
 export default function MarketplaceLayout({
   children,
@@ -11,6 +12,7 @@ export default function MarketplaceLayout({
       <Header />
       <main className="flex-1">{children}</main>
       <Footer />
+      <CookieConsent />
     </div>
   );
 }
