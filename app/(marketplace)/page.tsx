@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { createClient } from '@/lib/supabase/server';
 
 export default async function HomePage() {
@@ -21,36 +22,53 @@ export default async function HomePage() {
   return (
     <div className="container mx-auto px-4 py-16">
       {/* Hero Section */}
-      <section className="text-center py-20">
-        <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent leading-tight">
-          Soluções de Inteligência Artificial que Transformam Negócios
-        </h1>
-        <p className="text-2xl text-muted-foreground max-w-3xl mx-auto mb-6 leading-relaxed">
-          Desenvolvemos <strong>SaaS personalizados com IA</strong> que impulsionam resultados reais.
-          Desde 2025, especializados em criar sistemas inteligentes com excelência em tecnologia,
-          confiabilidade e performance.
-        </p>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-          <strong>Destaque:</strong> Integrius - CRM Imobiliário com IA que revoluciona a gestão de propriedades
-          com automação inteligente e decisões baseadas em dados.
-        </p>
-        <div className="flex gap-4 justify-center flex-wrap">
-          <Link
-            href="/services"
-            className="bg-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition-all text-lg shadow-lg"
-          >
-            Conheça Nossas Soluções
-          </Link>
-          <Link
-            href="/contact"
-            className="border-2 border-primary px-8 py-4 rounded-lg font-semibold hover:bg-accent transition-all text-lg"
-          >
-            Solicite uma Análise Gratuita
-          </Link>
+      <section className="py-20">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Text Content */}
+          <div className="text-center md:text-left">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent leading-tight">
+              Soluções de Inteligência Artificial que Transformam Negócios
+            </h1>
+            <p className="text-xl md:text-2xl text-muted-foreground mb-6 leading-relaxed">
+              Desenvolvemos <strong>SaaS personalizados com IA</strong> que impulsionam resultados reais.
+              Desde 2025, especializados em criar sistemas inteligentes com excelência em tecnologia,
+              confiabilidade e performance.
+            </p>
+            <p className="text-base md:text-lg text-muted-foreground mb-8">
+              <strong>Destaque:</strong> Integrius - CRM Imobiliário com IA que revoluciona a gestão de propriedades
+              com automação inteligente e decisões baseadas em dados.
+            </p>
+            <div className="flex gap-4 justify-center md:justify-start flex-wrap">
+              <Link
+                href="/services"
+                className="bg-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition-all text-lg shadow-lg"
+              >
+                Conheça Nossas Soluções
+              </Link>
+              <Link
+                href="/contact"
+                className="border-2 border-primary px-8 py-4 rounded-lg font-semibold hover:bg-accent transition-all text-lg"
+              >
+                Solicite uma Análise Gratuita
+              </Link>
+            </div>
+          </div>
+
+          {/* Hero Image */}
+          <div className="relative h-[400px] md:h-[500px] rounded-card overflow-hidden card-shadow-lg">
+            <Image
+              src="/heropic.png"
+              alt="Dashboard de Inteligência Artificial da Vivoly mostrando analytics, gráficos e métricas em tempo real - Plataforma SaaS com IA"
+              fill
+              className="object-contain"
+              priority
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </div>
         </div>
 
         {/* Trust Indicators */}
-        <div className="mt-12 flex justify-center gap-8 flex-wrap text-sm text-muted-foreground">
+        <div className="mt-16 flex justify-center gap-8 flex-wrap text-sm text-muted-foreground">
           <div className="flex items-center gap-2">
             <span className="text-2xl">🏆</span>
             <span>Especialistas em IA desde 2025</span>
