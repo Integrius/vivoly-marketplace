@@ -240,6 +240,16 @@ export default async function HomePage() {
                 <div className="text-muted-foreground">Mais Rápido</div>
               </div>
             </div>
+            <div className="mt-6 text-center">
+              <a
+                href="https://integrius.com.br"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-primary text-primary-foreground px-8 py-3 rounded-card font-semibold hover:opacity-90 transition-all shadow-lg"
+              >
+                Visite o Integrius →
+              </a>
+            </div>
           </div>
         </div>
       </section>
