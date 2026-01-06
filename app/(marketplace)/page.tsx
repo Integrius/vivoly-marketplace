@@ -26,7 +26,7 @@ export default async function HomePage() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div className="text-center md:text-left">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent leading-[1.15] pb-2">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent leading-[1.3] pb-2">
               Soluções de Inteligência Artificial que Transformam Negócios
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-6 leading-relaxed">
