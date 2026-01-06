@@ -84,10 +84,10 @@ export default function CookieConsent() {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
             <div className="flex-1">
-              <h3 className="text-lg font-bold mb-2">
+              <h3 className="text-lg font-bold mb-2 text-foreground">
                 🍪 Utilizamos Cookies
               </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <p className="text-sm text-foreground leading-relaxed">
                 Este site utiliza cookies para melhorar sua experiência de navegação,
                 personalizar conteúdo e analisar nosso tráfego. Ao clicar em
                 "Aceitar Todos", você concorda com o uso de todos os cookies.
